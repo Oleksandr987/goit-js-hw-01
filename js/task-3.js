@@ -9,19 +9,13 @@ let message;
 
 if (userSaid === null) {
   message = CANCELED_BY_USER;
-  console.assert(userSaid === null && message === CANCELED_BY_USER);
-}
-if (userSaid === ADMIN_PASSWORD) {
+  console.log(userSaid === null && message === CANCELED_BY_USER);
+} else if (userSaid === ADMIN_PASSWORD) {
   message = WELCOME;
-  console.assert(userSaid === ADMIN_PASSWORD && message === WELCOME);
-}
-if (userSaid !== ADMIN_PASSWORD && userSaid !== null) {
+  console.log(userSaid === ADMIN_PASSWORD && message === WELCOME);
+} else {
   message = ACCESS_DENIED;
-  console.assert(
-    userSaid !== ADMIN_PASSWORD
-        && userSaid !== null
-        && message === ACCESS_DENIED,
-  );
+  console.log(userSaid !== ADMIN_PASSWORD && userSaid !== null && message === ACCESS_DENIED);
 }
 
 alert(message);
